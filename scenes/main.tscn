@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5qg77xfwkeb8"]
+
+[ext_resource type="Script" uid="uid://cov8o54lwbipj" path="res://addons/card-framework/card_manager.gd" id="1_jyhfs"]
+[ext_resource type="Script" uid="uid://b1tnbjkb1s7b3" path="res://scenes/main.gd" id="1_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://ctkhip5i1lri2" path="res://assets/images/fp_cards/Anduril.png" id="2_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://7qcsutlss3oj" path="res://addons/card-framework/card_factory.tscn" id="3_tefeu"]
+[ext_resource type="Script" uid="uid://fp3x660dlc22" path="res://addons/card-framework/hand.gd" id="4_o6xl0"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_tbgi4")
+
+[node name="FPCardManager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_jyhfs")
+card_size = Vector2(200, 300)
+card_asset_dir = "res://assets/images/fp_cards"
+card_info_dir = "res://assets/data/fp_info"
+back_image = ExtResource("2_tbgi4")
+card_factory_scene = ExtResource("3_tefeu")
+metadata/_custom_type_script = "uid://cov8o54lwbipj"
+
+[node name="Hand" type="Control" parent="FPCardManager"]
+anchors_preset = 0
+offset_left = 672.0
+offset_top = 526.0
+offset_right = 712.0
+offset_bottom = 566.0
+script = ExtResource("4_o6xl0")
+metadata/_custom_type_script = "uid://fp3x660dlc22"
